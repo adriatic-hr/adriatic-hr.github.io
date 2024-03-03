@@ -1,6 +1,6 @@
 import React from 'react'
 import { addDays } from 'date-fns'
-import { isBefore, isAfter, isEqual } from 'date-fns'
+import { isBefore } from 'date-fns'
 
 export default function Price(props) {
 

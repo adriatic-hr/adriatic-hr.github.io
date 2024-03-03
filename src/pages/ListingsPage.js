@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import Accommodation from '../components/Accommodation'
-import DatePicker from '../components/DatePicker'
 import AmenitySelector from '../components/AmenitySelector'
+import DatePicker from '../components/DatePicker'
 import GuestsNumber from '../components/GuestsNumber'
 
-// TODO: Replace with data from adriatic api
-import accommodations from "../accommodations.json"
 
 const client = axios.create({
   baseURL: "https://api.adriatic.hr"
@@ -22,6 +20,7 @@ export default function BookingPage() {
   const [guestNumber, setGuestNumber] = useState(0)
   const [reqAmenities, setReqAmenities] = useState({})
   const [dateRange, setDateRange] = useState({ startDate: null, endDate: null })
+  const [accommodations, setAccommodations] = useState([])
 
   function handleGuestCallback(childGuestNumber) {
     setGuestNumber(childGuestNumber)
@@ -36,18 +35,15 @@ export default function BookingPage() {
     setDateRange(childDateRange)
   }
 
-  // useEffect(() => {
-
-  // client.get("/test/accommodation")
-  //   .then(function (res) {
-  //     console.log(res.data)
-  //     accommodations = res.data
-  //   })
-  //   .catch(function (error) {
-  //     console.log("ERROR")
-  //   })
-
-  // }, [])
+  useEffect(() => {
+    client.get("/test/accommodation")
+      .then(function (res) {
+        setAccommodations(res.data)
+      })
+      .catch(function (error) {
+        console.log("Error fetching data")
+      })
+  }, [])
 
   const filters = {
     dateRange: dateRange,

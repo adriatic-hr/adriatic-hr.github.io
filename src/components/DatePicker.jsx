@@ -1,7 +1,7 @@
-import React, { Component, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-import { DateRange } from 'react-date-range'
 import { addDays } from 'date-fns'
+import { DateRange } from 'react-date-range'
 import format from 'date-fns/format'
 
 import 'react-date-range/dist/styles.css'

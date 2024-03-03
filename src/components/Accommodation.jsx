@@ -1,5 +1,5 @@
-import { isBefore, isAfter } from 'date-fns'
 import React, { useState } from 'react'
+import { isBefore, isAfter } from 'date-fns'
 
 import Info from './Info'
 import Capacity from './Capacity'
