@@ -15,7 +15,7 @@ axios.defaults.xsrfCookieName = "csrftoken"
 axios.defaults.xsrfHeaderName = "X-CSRFToken"
 axios.defaults.withCredentials = true
 
-export default function BookingPage() {
+export default function ListingsPage() {
 
   const [guestNumber, setGuestNumber] = useState(0)
   const [reqAmenities, setReqAmenities] = useState({})

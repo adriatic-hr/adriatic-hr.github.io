@@ -1,11 +1,15 @@
 
-import './App.css';
-import BookingPage from './pages/ListingsPage';
+import './App.css'
+import ListingsPage from './pages/ListingsPage'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container } from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
-      <BookingPage />
+      <Container>
+        <ListingsPage />
+      </Container>
     </div>
   );
 }
